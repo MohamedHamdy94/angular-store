@@ -11,6 +11,7 @@ min-width: 10vw;
 position: relative;
 z-index: 10;
 left: -5rem;
+top: 0.5rem;
 
 }
 .badge{
