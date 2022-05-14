@@ -1,0 +1,89 @@
+<div class="container mt-5  h-100">
+  <div class="row">
+    <ng-container *ngFor="let product of products | filter: searchKey:'title'">
+      <!-- <div class="card card-md-3">
+        <img [src]="product.image" alt="" />
+        <h5></h5>
+        <p></p>
+        <p></p>
+        <button class="btn btn-primary">Add to cart</button>
+      </div> -->
+      <div class="card m-2 card-md-3" >
+        <img
+          class="card-img-top"
+          (click)="showDetails(product)"
+          [src]="product.image"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title" (click)="showDetails(product)">{{ product.title }}</h5>
+          <p class="card-text"(click)="showDetails(product)">{{ product.description }}</p>
+          <div class="d-flex justify-content-between">
+            <p><strong>Price : </strong>{{ product.price | currency }}</p>
+            <div class="d-flex" (click)="showDetails(product)">
+              <fa-icon
+                *ngIf="product.rating.rate < 1"
+                class="text-warning"
+                [icon]="faStarHalfStroke"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate > 1"
+                class="text-warning"
+                [icon]="faStar"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate < 2 && product.rating.rate > 1"
+                class="text-warning"
+                [icon]="faStarHalfStroke"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate > 2"
+                class="text-warning"
+                [icon]="faStar"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate < 3 && product.rating.rate > 2"
+                class="text-warning"
+                [icon]="faStarHalfStroke"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate > 3"
+                class="text-warning"
+                [icon]="faStar"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate < 4 && product.rating.rate > 3"
+                class="text-warning"
+                [icon]="faStarHalfStroke"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate > 4"
+                class="text-warning"
+                [icon]="faStar"
+              >
+              </fa-icon>
+              <fa-icon
+                *ngIf="product.rating.rate < 5 && product.rating.rate > 4"
+                class="text-warning"
+                [icon]="faStarHalfStroke"
+              >
+              </fa-icon>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary mb-2" (click)="addToCart(product)">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

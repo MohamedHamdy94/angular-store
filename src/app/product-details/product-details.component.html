@@ -1,0 +1,98 @@
+<!-- category: "men's clothing"
+description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket."
+id: 2
+image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+price: 22.3
+rating: {rate: 4.1, count: 259}
+title: "Mens Casual Premium Slim Fit T-Shirts " -->
+
+<div class="container mt-5 h-100" id="product-section">
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        [src]="product.image"
+        alt=""
+        class="image-responsive w-75"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ product.title }}</h1>
+          <h5>{{ product.category }}</h5>
+        </div>
+        <div class="col-md-12">
+          <p class="description">
+            {{ product.description }}
+          </p>
+        </div>
+        <div class="d-flex">
+          <fa-icon
+            *ngIf="product.rating.rate < 1"
+            class="  text-warning"
+            [icon]="faStarHalfStroke"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate > 1"
+            class="  text-warning"
+            [icon]="faStar"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate < 2 && product.rating.rate > 1"
+            class="  text-warning"
+            [icon]="faStarHalfStroke"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate > 2"
+            class="  text-warning"
+            [icon]="faStar"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate < 3 && product.rating.rate > 2"
+            class="  text-warning"
+            [icon]="faStarHalfStroke"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate > 3"
+            class="  text-warning"
+            [icon]="faStar"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate < 4 && product.rating.rate > 3"
+            class="  text-warning"
+            [icon]="faStarHalfStroke"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate > 4"
+            class="  text-warning"
+            [icon]="faStar"
+          >
+          </fa-icon>
+          <fa-icon
+            *ngIf="product.rating.rate < 5 && product.rating.rate > 4"
+            class="  text-warning"
+            [icon]="faStarHalfStroke"
+          >
+          </fa-icon>
+        </div>
+        <div class="col-md-12 bottom-rule">
+          <h2 class="product-price">{{ product.price | currency }}</h2>
+        </div>
+        <div class="">
+          <button *ngIf="product" class="btn btn-primary" (click)="addToCart('product')">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
